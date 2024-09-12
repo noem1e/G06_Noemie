@@ -13,3 +13,5 @@ d.	Introduction
 e.	Methods
 
 f.	Results
+
+g.	Discussion
