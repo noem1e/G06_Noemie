@@ -11,3 +11,5 @@ c.	Abstract
 d.	Introduction
 
 e.	Methods
+
+f.	Results
