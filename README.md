@@ -22,3 +22,5 @@ random text hallo blubb blubb
 
 
 another random text
+
+Feedback: ca. 2 stunden. gab viele probleme, sachen funktionieren nicht und es war schwierig so viele fenster handzuhaben. ich fand es schwierig, zu unterscheiden wann man online, desktop oder computer machen mussste. 
