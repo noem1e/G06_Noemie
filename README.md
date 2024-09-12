@@ -9,3 +9,5 @@ b.      Keywords
 c.	Abstract
 
 d.	Introduction
+
+e.	Methods
