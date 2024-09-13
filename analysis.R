@@ -1,5 +1,5 @@
-# test the power
-#test for differnten power and conditions. 
+# Poweranalyse
+
 library(pwr)
 # Power for small effect (r = 0.1)
 pwr.r.test(n = 800, r = 0.1, sig.level = 0.05, power = NULL, alternative = "two.sided")
@@ -61,14 +61,14 @@ pwr.r.test(n=250, r=0.5, sig.level = 0.05, power = NULL, alternative = c("two.si
 #--------------------
   
 #Exercise 4 Part 1, Step 6
-#overall load data and make a short overview of it.
+
 mydata <- read.table("mydata.txt", header=T, sep="\t")
 
 View(mydata)
 dim(mydata)
 summary(mydata)
 head(mydata)
-#filter for data.
+
 mydata$Sex <- as.factor(mydata$Sex)
 mydata$Filter <- as.factor(mydata$Filter)
 summary(mydata)
@@ -80,7 +80,7 @@ nrow(mydata)
 
 
 
-#7) Validation, make statistical tests (t-test) and make plots. for validation. 
+#7) Validation
 
 t.test(mydata$Testosteron ~ mydata$Sex)
 plot(mydata$Testosteron ~ mydata$Sex)
