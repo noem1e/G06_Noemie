@@ -56,3 +56,118 @@ pwr.r.test(n=250, r=0.5, sig.level = 0.05, power = NULL, alternative = c("two.si
 
 # power: 1
 
+#--------------------
+  
+#Exercise 4 Part 1, Step 6
+
+mydata <- read.table("mydata.txt", header=T, sep="\t")
+
+View(mydata)
+dim(mydata)
+summary(mydata)
+head(mydata)
+
+mydata$Sex <- as.factor(mydata$Sex)
+mydata$Filter <- as.factor(mydata$Filter)
+summary(mydata)
+
+mydata <- subset(mydata, Filter == 0)
+nrow(mydata)
+
+# n = 833
+
+
+
+#7) Validation
+
+t.test(mydata$Testosteron ~ mydata$Sex)
+plot(mydata$Testosteron ~ mydata$Sex)
+summary(mydata$Testosteron[mydata$Sex==0])
+summary(mydata$Testosteron[mydata$Sex==1])
+
+#Ja macht sinn, weil Männer haben mehr testosteron (Gruppe 1= Männer)
+
+
+repdata <-read.table(file.choose(), header=T, sep="\t")
+
+View(repdata)
+dim(repdata)
+summary(repdata)
+head(repdata)
+
+repdata$Sex <- as.factor(repdata$Sex)
+repdata$Filter <- as.factor(repdata$Filter)
+summary(repdata)
+
+repdata <- subset(repdata, Filter == 0)
+nrow(repdata)
+
+t.test(repdata$Testosteron ~ repdata$Sex)
+plot(repdata$Testosteron ~ repdata$Sex)
+summary(repdata$Testosteron[repdata$Sex==0])
+summary(repdata$Testosteron[repdata$Sex==1])
+
+# the same pattern: mean in group 0 = 1.21, mean in group 1= 24.1
+
+mydata$Sex_ch <- factor(mydata$Sex, levels=c(0,1), labels=c("female", "male"))
+summary(mydata)
+summary(lm(Extraversion ~ Sex_ch, data=mydata))
+
+
+
+# 8) Reliability
+
+cor(mydata$EM_SD, mydata$EM_LD, use="pairwise")
+t.test(mydata$EM_SD, mydata$EM_LD)
+summary(mydata$EM_SD)
+summary(mydata$EM_LD)
+
+# Corr = 0.856
+# p-value is significant = there is a difference in performance
+# makes sense, mean is smaller bei LD, less memorized
+
+cor(repdata$EM_SD, repdata$EM_LD, use="pairwise")
+t.test(repdata$EM_SD, repdata$EM_LD)
+summary(repdata$EM_SD)
+summary(repdata$EM_LD)
+
+# same pattern in repdata
+
+
+
+# 9) Aggregation
+
+mydata$EM <- (mydata$EM_SD + mydata$EM_LD)/2
+
+plot(density(mydata$EM_SD), main="Compare EM SD and LD", frame.plot=F)
+lines(density(mydata$EM_LD), col="red")
+lines(density(mydata$EM), col="green")
+
+repdata$EM <- (repdata$EM_SD + repdata$EM_LD)/2
+
+plot(density(repdata$EM_SD), main="Compare EM SD and LD", frame.plot=F)
+lines(density(repdata$EM_LD), col="red")
+lines(density(repdata$EM), col="green")
+
+# plots look similar, rep plot is a bit wider?
+
+# 10) Validation
+
+cor(mydata$fMRI_amy_neg_neu, mydata$fMRI_hipp_neg_neu)
+plot(mydata$fMRI_amy_neg_neu, mydata$fMRI_hipp_neg_neu, pch=19)
+abline(lm(mydata$fMRI_hipp_neg_neu ~ mydata$fMRI_amy_neg_neu))
+
+# corr = 0.748, the correlation is quite high and makes sense.
+
+cor(repdata$fMRI_amy_neg_neu, repdata$fMRI_hipp_neg_neu)
+plot(repdata$fMRI_amy_neg_neu, repdata$fMRI_hipp_neg_neu, pch=19)
+abline(lm(repdata$fMRI_hipp_neg_neu ~ repdata$fMRI_amy_neg_neu))
+
+# corr bei repdata = 0.766 similar pattern
+
+
+summary(lm(EM ~ Sex_ch + Extraversion + fMRI_hipp_neg_neu, data=mydata))
+
+# 11) Statistical analysis
+
+
