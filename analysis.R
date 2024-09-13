@@ -1,3 +1,5 @@
+# test the power
+
 library(pwr)
 # Power for small effect (r = 0.1)
 pwr.r.test(n = 800, r = 0.1, sig.level = 0.05, power = NULL, alternative = "two.sided")
@@ -151,6 +153,7 @@ lines(density(repdata$EM), col="green")
 
 # plots look similar, rep plot is a bit wider?
 
+
 # 10) Validation
 
 cor(mydata$fMRI_amy_neg_neu, mydata$fMRI_hipp_neg_neu)
@@ -168,6 +171,29 @@ abline(lm(repdata$fMRI_hipp_neg_neu ~ repdata$fMRI_amy_neg_neu))
 
 summary(lm(EM ~ Sex_ch + Extraversion + fMRI_hipp_neg_neu, data=mydata))
 
+
 # 11) Statistical analysis
 
+# Hypothese: Ein höheres Mass an Testosteron ist mit einer besseren Leistung im Kurzzeitgedächtnis verbunden.
 
+cor(mydata$EM_SD, mydata$Testosteron)
+
+cor.test(mydata$EM_SD, mydata$Testosteron)
+
+# leicht negative Korrelation, mehr testosteron = leicht schlechteres kurzzeitgedächtnis. statistisch signifikant.
+
+cor(repdata$EM_SD, repdata$Testosteron)
+
+cor.test(repdata$EM_SD, repdata$Testosteron)
+
+# bei repdata ist die Korrelation -0.2 und auch signifikant.
+
+
+
+### Optimizing script: Wir haben in der Gruppe besprochen, dass folgende Aufteilung sinnvoll wäre:
+
+# Datenimport und Datenaufbereitung
+# Datenfilterung und Qualitätskontrolle
+# Erstellung neuer Variablen und Transformationen
+# Statistische Analysen und Visualisierung
+# Speicherung der Ergebnisse und Berichte
