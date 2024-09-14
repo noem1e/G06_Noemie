@@ -25,9 +25,7 @@ For my own hypothesis I found a significant slightly negative correlation (-0.15
 
 
 
-Feedback: ca. 2 stunden. gab viele probleme, sachen funktionieren manchmal nicht und es war schwierig so viele fenster handzuhaben. ich fand es schwierig, zu unterscheiden wann man online, desktop oder computer machen mussste. Es ging aber, ich denke man braucht einfach Übung, um den dreh raus zu haben.
 
-Feedback Tag 2: In der Gruppe konnten wir uns gegenseitig helfen, alleine wäre die Aufgabe länger gegangen und schwieriger gewesen. Man muss sich zurecht finden und sobald man verstanden hat, worum es in der Aufgabe geht und was man wo findet, geht es, aber das braucht eigentlich die meiste Zeit von allem. Wir haben ca. 3 - 4 Stunden gebraucht. 
 
 
 
