@@ -1,4 +1,4 @@
-# Poweranalyse
+### Poweranalyse
 
 library(pwr)
 # Power for small effect (r = 0.1)
@@ -62,6 +62,8 @@ pwr.r.test(n=250, r=0.5, sig.level = 0.05, power = NULL, alternative = c("two.si
   
 #Exercise 4 Part 1, Step 6
 
+### Read in data and quality check = removing of low-quality data
+
 mydata <- read.table("mydata.txt", header=T, sep="\t")
 
 View(mydata)
@@ -79,6 +81,8 @@ nrow(mydata)
 # n = 833
 
 
+### Reliability, validation and aggregation of data
+### also contain Replication analysis 
 
 #7) Validation
 
@@ -171,6 +175,10 @@ abline(lm(repdata$fMRI_hipp_neg_neu ~ repdata$fMRI_amy_neg_neu))
 
 summary(lm(EM ~ Sex_ch + Extraversion + fMRI_hipp_neg_neu, data=mydata))
 
+
+
+### Main analysis
+### also contains replication analysis
 
 # 11) Statistical analysis
 
