@@ -180,9 +180,9 @@ summary(lm(EM ~ Sex_ch + Extraversion + fMRI_hipp_neg_neu, data=mydata))
 ### Main analysis
 ### also contains replication analysis
 
-# 11) Statistical analysis
 
-# Hypothese: Ein höheres Mass an Testosteron ist mit einer besseren Leistung im Kurzzeitgedächtnis verbunden.
+
+# Hypothese 1 (Exercise 11): Ein höheres Mass an Testosteron ist mit einer besseren Leistung im Kurzzeitgedächtnis verbunden.
 
 cor(mydata$EM_SD, mydata$Testosteron)
 
@@ -195,6 +195,25 @@ cor(repdata$EM_SD, repdata$Testosteron)
 cor.test(repdata$EM_SD, repdata$Testosteron)
 
 # bei repdata ist die Korrelation -0.2 und auch signifikant.
+
+
+
+# Hypothese 2 (Exercise 7): Testosterone mediates the relationship between fMRI activations in the amygdala and short term memory performance.
+
+summary(lm(EM_SD ~ fMRI_amy_neg_neu*Testosteron,data = mydata))
+
+summary(lm(EM_SD ~ fMRI_amy_neg_neu*Testosteron, data = repdata))
+
+
+
+### Additional analysis: Sensitivity analysis for Hypothesis 2 (unfiltered mydata)
+
+summary(lm(EM_SD ~ fMRI_amy_neg_neu*Testosteron,data = mydata))
+
+
+
+
+
 
 
 
