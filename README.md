@@ -3,7 +3,8 @@
 
 # Neuroendocrine Modulation of Memory: Investigating the Role of Testosterone in Amygdala Activation and Cognitive Processes Using fMRI
 
-# b. Keywords 
+## Keywords 
+Testosterone, Memory, fMRI, Amygdala, Memory formation, Memory retrieval, Neuroendocrine mechanisms
 
 # c.	Abstract
 
